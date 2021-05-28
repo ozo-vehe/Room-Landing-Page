@@ -1,0 +1,317 @@
+* {
+    --dark-gray: hsl(0, 0%, 63%);
+    --color-black: hsl(0, 0%, 0%);
+    --color-white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+body {
+    font-family: 'Spartan';
+    margin: 0px;
+    font-size: 12px;
+    padding: 0px 70px;
+}
+
+#navigation {
+    position: absolute;
+    top: 5%;
+    left: 100px;
+    z-index: 3;
+}
+.nav-menu img {
+    display: none;
+}
+nav,
+h2 {
+    color: var(--color-white);
+    display: inline-block;
+}
+h2 {
+    font-size: 1.5rem;
+}
+nav ul {
+    padding: 0px;
+    margin: 0px 0px 0px 30px;
+}
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 5px 10px;
+    padding: 3px 3px;
+    position: relative;
+}
+nav ul li::after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: .3s all;
+}
+nav ul li:hover::after {
+    width: 100%;
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+#header-image {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 62vh;
+}
+
+#images {
+    grid-column: 1 / 8;
+    position: relative;
+}
+#images img {
+    width: 100%;
+    height: 100%;
+}
+
+#arrow-icn {
+    height: 50px;
+    width: 100px;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: -100px;
+    z-index: 2;
+}
+.img-one,
+.img-two {
+    position: relative;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-black);
+    display: flex;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.img-one:hover,
+.img-two:hover {
+    background-color: var(--very-dark-gray);
+}
+#arrow-icn img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 15px;
+}
+
+
+#image-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    grid-column: 8 / 13;
+    padding: 15% 10%;
+    box-sizing: border-box;
+}
+#image-info p {
+    line-height: 1.5;
+}
+#image-info h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+#show-more {
+    margin: 30px 0px;
+}
+#show-more p {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+    display: inline;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#show-more p:hover {
+    color: var(--very-dark-gray);
+}
+
+
+#body-page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(35vh, auto);
+}
+#image-one {
+    background-image: url(images/image-about-dark.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 1 / 4;
+    height: 220px;
+}
+#about-page {
+    grid-column: 4 / 10;
+    padding: 10%;
+    box-sizing: border-box;
+    height: 220px;
+}
+#about-page h3 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+}
+#about-page p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+#image-two {
+    background-image: url(images/image-about-light.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 10 / 13;
+    height: 220px;
+}
+
+
+.attribution {
+    width: 450px;
+    text-align: center;
+    width: 100%;
+}
+
+
+/*****************  Media Query ************************/
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 16px;
+        padding: 0px;
+        margin: 0px 0px;
+        position: relative;
+    }
+    
+    #navigation {
+        position: absolute;
+        padding: 0px 7%;
+        top: 20px;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-menu > img {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 30px;
+        cursor: pointer;
+    }
+    nav ul {
+        position: absolute;
+        left: 0px;
+        top: -20px;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        background-color: var(--color-white);
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: all 0.3s;
+    }
+    .menu-dropdown {
+        height: 100px;
+    }
+    .nav-menu ul img {
+        display: inline-block;
+        width: 20px;
+        cursor: pointer;
+    }
+    nav ul li {
+        list-style-type: none;
+        display: inline;
+        margin: 5px 5px;
+        padding: 5px 7px;
+        position: relative;
+        transition: all 0.3s;
+    }
+    .nav-menu ul li:hover {
+        border-radius: 3px;
+        background-color: var(--very-dark-gray);
+    }
+    .nav-menu ul li:hover a {
+        color: var(--color-white);
+    }
+    .nav-menu ul li a {
+        color: var(--color-black);
+    }
+    
+    
+    #images {
+        grid-column: 1 / 13;
+        height: 400px;
+    }
+    #image-info {
+        grid-column: 1 / 13;
+    }
+    
+    #arrow-icn {
+        right: 0px;
+    }
+    
+    
+    #body-page {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(35vh, auto);
+    }
+    #image-one {
+        grid-column: 1 / 13;
+        background-size: cover;
+        height: 250px;
+    }
+    #about-page {
+        grid-column: 1 / 13;
+        margin: 40px auto;
+        height: auto;
+    }
+    #image-two {
+        grid-column: 1 / 13;
+        background-size: cover;
+        height: 250px;
+    }
+    
+    
+    .attribution {
+        margin-top: 25px;
+    }
+
+    .modal {
+        height: 0%;
+        overflow: hidden;
+        width: 100%;
+        opacity: 0.4;
+        background-color: var(--color-black);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: all 0.1s;
+        z-index: 2;
+    }
+    .show {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    #image-info {
+        padding: 30px 20px;
+    }
+}
